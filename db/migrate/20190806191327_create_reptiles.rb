@@ -5,6 +5,7 @@ class CreateReptiles < ActiveRecord::Migration[5.1]
       t.string :species
       t.integer :age
       t.integer :offspring
+      t.integer :user_id
 
       t.timestamps
     end
