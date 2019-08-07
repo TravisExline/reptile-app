@@ -1,7 +1,4 @@
 class ReptilesController < ApplicationController
-  def index
-  end
-
   def show
     @reptiles = Reptile.all
   end
