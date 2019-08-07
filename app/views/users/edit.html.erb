@@ -1,0 +1,11 @@
+<h3>Edit</h3>
+<%=form_for @user do |f| %>
+  <%= f.label :name %></br>
+  <%= f.text_field :name %></br>
+  <%= f.label :pet_count, "How many reptiles do you have?" %>
+  <%= f.text_field :pet_count %></br>
+  <%= f.label :password %></br>
+  <%= f.text_field :password %></br>
+  </br>
+  <%= f.submit %>
+<% end %>
