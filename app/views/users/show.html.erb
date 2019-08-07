@@ -1,0 +1,7 @@
+<h1> Welcome, <%= @user.name %>!</h1>
+
+<p>Reptiles Owned: <%= @user.pet_count %></p>
+</br>
+<p><%= link_to 'See Your Posts', posts_path %></p>
+<p><%= link_to 'See Your Reptiles', reptiles_path %></p>
+<p><%= link_to 'Logout', logout_path %></p>
