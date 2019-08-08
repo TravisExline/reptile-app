@@ -1,5 +1,4 @@
 class ReptilesController < ApplicationController
-  require pry
 
   def index
     if params[:user_id]
@@ -21,7 +20,6 @@ class ReptilesController < ApplicationController
     @reptile = Reptile.new(reptile_params)
     if @reptile.valid?
       @reptile.save
-      binding.pry
       redirect_to reptile_path(@reptile)
     else
       render :new
