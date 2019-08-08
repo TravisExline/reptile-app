@@ -1,7 +1,7 @@
 class ReptilesController < ApplicationController
   def index
     if params[:user_id]
-      @reptiles = User.find(params[:user_id]).reptiles
+      @reptiles = Reptile.find(params[:user_id]).reptiles
     else
       @reptiles = Reptile.all
     end
@@ -27,7 +27,6 @@ class ReptilesController < ApplicationController
 
   def edit
     @reptile = Reptile.find(params[:id])
-    redirect_to reptile_path(@reptile)
   end
 
   def update
@@ -39,6 +38,6 @@ class ReptilesController < ApplicationController
   private
 
   def reptile_params
-    params.require(:reptile).permit(:name, :species, :offspring)
+    params.require(:reptile).permit(:name, :species, :offspring, :age)
   end
 end

@@ -1,1 +1,6 @@
-<h2>Your Posts<h2>
+<h2>Your Posts</h2>
+</br>
+<%= @posts.each do |post| %>
+  <div><%= post.content %></div>
+  </br>
+<% end %>

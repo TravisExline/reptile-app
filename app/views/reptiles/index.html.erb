@@ -1,1 +1,9 @@
 <h2>Your Reptiles</h2>
+</br>
+<%= @reptiles.each do |reptile| %>
+  <div><%= reptile.name %></div>
+  <div><%= reptile.age %></div>
+  <div><%= reptile.species %></div>
+  <div><%= reptile.offspring %></div>
+  </br>
+<% end %>

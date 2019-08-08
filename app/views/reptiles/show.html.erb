@@ -1,1 +1,8 @@
-<h2>Your Reptiles</h2>
+<h2><%= @reptile.name %></h2>
+<p><%= @reptile.age %></p>
+<p><%= @reptile.species %></p>
+<p><%= @reptile.offspring %></p>
+
+<%= link_to 'Edit Reptile', edit_reptile_path %></br>
+<%= link_to 'See All Reptiles', reptiles_path %></br>
+<%= link_to 'Return to User Page', user_path %></br>
