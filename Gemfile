@@ -33,6 +33,12 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'pry'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.3.1'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>=1.1.0'
+end
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
