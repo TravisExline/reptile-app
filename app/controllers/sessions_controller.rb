@@ -1,16 +1,13 @@
 class SessionsController < ApplicationController
   def new
+    @users = User.all
   end
 
   def create
-    @user = User.find(params[:id])
-    if @user && @user.authenticate(params[:password])
-      log_in(@user)
-      redirect_to @user
-    else
-      flash.now[:message] = "Unable to Login"
-      render :new
-    end
+    @user = User.find_by(name: params[:name])
+    return head(:forbidden) unless @user.authenticate(params[:password])
+    session[:user_id] = @user.id
+    redirect_to @user
   end
 
   def destroy

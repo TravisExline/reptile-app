@@ -1,6 +1,14 @@
 class ReptilesController < ApplicationController
+  def index
+    if params[:user_id]
+      @reptiles = User.find(params[:user_id]).reptiles
+    else
+      @reptiles = Reptile.all
+    end
+  end
+
   def show
-    @reptiles = Reptile.all
+    @reptile = Reptile.find(params[:id])
   end
 
   def new
