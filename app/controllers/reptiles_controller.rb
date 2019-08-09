@@ -18,6 +18,8 @@ class ReptilesController < ApplicationController
 
   def create
     @reptile = Reptile.new(reptile_params)
+    @user = current_user
+    @reptile.user_id = @user.id
     if @reptile.valid?
       @reptile.save
       redirect_to reptile_path(@reptile)

@@ -20,6 +20,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @user = current_user
+    @post.user_id = @user.id
     if @post.valid?
       @post.save
       redirect_to post_path(@post)
