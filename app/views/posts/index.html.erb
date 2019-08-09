@@ -10,15 +10,9 @@
 
 
 <body>
-  <% if !params[:date].blank? %>
-    <% if params[:date] == "Today" %>
-      <% @posts = Post.where("created_at >=?", Time.zone.today.beginning_of_day) %>
-    <% else @posts = Post.where("created_at <=?", Time.zone.today.beginning_of_day) %>
-    <% end %>
-  <% end %>
  <div class="container" align="center">
    <div>
-     <h4>Filter Reptiles</h4>
+     <h4>Filter Posts</h4>
      <%= form_tag("/posts", method: "get") do %>
        <%= select_tag "date", options_for_select(["Today", "Older"]), include_blank: true %>
        <%= submit_tag "Filter" %>

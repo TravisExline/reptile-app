@@ -1,9 +1,16 @@
 class PostsController < ApplicationController
   def index
-    if params[:user_id]
-      @posts = Post.find(params[:user_id]).posts
+    if !params[:date].blank?
+      if params[:date] == "Today"
+        @posts = Post.from_today
+      else @posts = Post.older
+      end
     else
-      @posts = Post.all
+      if params[:user_id]
+        @posts = Post.find(params[:user_id]).posts
+      else
+        @posts = Post.all
+      end
     end
   end
 
