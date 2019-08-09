@@ -1,3 +1,10 @@
+<div>
+  <h4>Filter Reptiles</h4>
+  <%= form_tag("/reptiles", method: "get") do %>
+    <%= select_tag "species", options_from_collection_for_select(Reptile.all, "id", "species"), include_blank: true %>
+    <%= submit_tag "Filter" %>
+  <% end %>
+</div>
 <h2>Your Reptiles</h2>
 </br>
 <%= @reptiles.each do |reptile| %>

@@ -1,7 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<body>
+  <% if !params[:date].blank? %>
+    <% if params[:date] == "Today" %>
+      <% @posts = Post.where("created_at >=?", Time.zone.today.beginning_of_day) %>
+    <% else @posts = Post.where("created_at <=?", Time.zone.today.beginning_of_day) %>
+    <% end %>
+  <% end %>
+ <div class="container" align="center">
+   <div>
+     <h4>Filter Reptiles</h4>
+     <%= form_tag("/posts", method: "get") do %>
+       <%= select_tag "date", options_for_select(["Today", "Older"]), include_blank: true %>
+       <%= submit_tag "Filter" %>
+     <% end %>
+   </div>
 <h2>Your Posts</h2>
 </br>
 <%= @posts.each do |post| %>
   <div><%= post.title %></div>
   <div><%= post.content %></div>
-  </br>
+</br>
 <% end %>
+</div>
+</body>
