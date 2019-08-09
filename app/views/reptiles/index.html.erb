@@ -22,9 +22,10 @@
 </br>
 <% @reptiles.each do |reptile| %>
   <div><%= reptile.name %></div>
-  <div><%= reptile.age %></div>
-  <div><%= reptile.species %></div>
-  <div><%= reptile.offspring %></div>
+  <div>Age: <%= reptile.age %></div>
+  <div>Species: <%= reptile.species %></div>
+  <div>Offspring: <%= reptile.offspring %></div>
+  </br>
   </br>
 <% end %>
 </div>

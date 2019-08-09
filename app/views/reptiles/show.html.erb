@@ -1,8 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+<body>
+<div class="container" align="center">
+<div>
 <h2><%= @reptile.name %></h2>
-<p><%= @reptile.age %></p>
-<p><%= @reptile.species %></p>
-<p><%= @reptile.offspring %></p>
+<p>Age: <%= @reptile.age %></p>
+<p>Species: <%= @reptile.species %></p>
+<p>Number of Offspring: <%= @reptile.offspring %></p>
 
 <%= link_to 'Edit Reptile', edit_reptile_path %></br>
 <%= link_to 'See All Reptiles', reptiles_path %></br>
 <%= link_to 'Return to User Page', user_path %></br>
+</div>
