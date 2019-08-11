@@ -11,6 +11,20 @@
 
 <body>
 <div class="container" align="center">
+  <% if @reptile.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(@reptile.errors.count, "error") %>
+      prohibited this article from being saved:
+    </h2>
+
+    <ul>
+    <% @reptile.errors.full_messages.each do |msg| %>
+      <%= msg %></br>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
 <h3>Create Your Reptile</h3>
 <%= form_for @reptile do |f| %>
   <%= f.label :name %></br>

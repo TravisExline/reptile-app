@@ -11,6 +11,20 @@
 
 <body>
  <div class="container" align="center">
+   <% if @post.errors.any? %>
+   <div id="error_explanation">
+     <h2>
+       <%= pluralize(@post.errors.count, "error") %>
+       prohibited this article from being saved:
+     </h2>
+
+     <ul>
+     <% @post.errors.full_messages.each do |msg| %>
+       <%= msg %></br>
+     <% end %>
+     </ul>
+   </div>
+ <% end %>
 <h3>Make a Post</h3>
 <%= form_for @post do |f| %>
   <%= f.label :title %></br>
