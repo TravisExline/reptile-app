@@ -2,13 +2,14 @@ class ReptilesController < ApplicationController
 
   def index
     if params[:user_id]
-      @reptiles = Reptile.find(params[:user_id]).reptiles
+      @reptiles = User.find(params[:user_id]).reptiles
     else
       @reptiles = Reptile.all
     end
   end
 
   def show
+    @user = User.find(params[:id])
     @reptile = Reptile.find(params[:id])
   end
 

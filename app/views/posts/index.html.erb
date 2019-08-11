@@ -24,8 +24,12 @@
   <div><%= post.title %></div>
   <div><%= post.content %></div>
 </br>
+<%= link_to 'Edit Post', edit_post_path(post) %></br>
+<%= link_to 'View Post', post_path(post) %></br>
+</br>
+</br>
 <% end %>
 
-<%= link_to 'Return to User Page', user_path(:user_id) %>
+<%= link_to 'Return to User Page', users_path(:user_id) %>
 </div>
 </body>

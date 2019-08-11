@@ -26,6 +26,9 @@
   <div>Species: <%= reptile.species %></div>
   <div>Offspring: <%= reptile.offspring %></div>
   </br>
+  <%= link_to 'Edit Reptile', edit_reptile_path(reptile) %></br>
+  <%= link_to 'View Reptile', reptile_path(reptile) %></br>
   </br>
 <% end %>
+<%= link_to 'Return to User Page', user_path(:id) %></br>
 </div>

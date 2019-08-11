@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'session#create'
   delete '/posts/:id', to: 'posts#destroy'
 
-  resources :posts
+  resources :posts, only: [:index, :show, :new, :create, :edit, :update]
   resources :users, only: [:index, :show, :new, :create, :edit] do
-    resources :reptiles, only: [:show, :index]
+    resources :reptiles, only: [:show, :index, :new, :edit]
   end
-  resources :reptiles
+  resources :reptiles, only: [:index, :show, :new, :create, :edit, :update]
 end
