@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       log_in(@user)
-      redirect_to user_path(@user)
+      redirect_to users_path(@user)
     else
       render :new
     end
