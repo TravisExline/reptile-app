@@ -9,7 +9,7 @@ class ReptilesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
     @reptile = Reptile.find(params[:id])
   end
 

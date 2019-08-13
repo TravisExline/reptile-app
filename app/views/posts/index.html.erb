@@ -21,7 +21,7 @@
 <h2>Your Posts</h2>
 </br>
 <% @posts.each do |post| %>
-  <div><%= post.title %></div>
+  <div><strong><%= post.title %></div></strong>
   <div><%= post.content %></div>
 </br>
 <%= link_to 'Edit Post', edit_post_path(post) %></br>
@@ -30,6 +30,8 @@
 </br>
 <% end %>
 
+
+<%= link_to 'Create New Post', new_post_path %></br>
 <%= link_to 'Return to User Page', user_path(current_user) %>
 </div>
 </body>

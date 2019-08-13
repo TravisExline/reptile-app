@@ -26,7 +26,8 @@
  <% end %>
 <h3>Make a Post</h3>
 <%= form_for @post do |f| %>
-  <%= f.collection_select :reptile_id, @reptiles, :id, :name %>
+  <p> Who is your post for?</p>
+  <%= f.collection_select :reptile_id, @reptiles, :id, :name %></br>
   <%= f.label :title %></br>
   <%= f.text_area :title %></br>
   </br>

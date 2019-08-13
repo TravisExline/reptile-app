@@ -17,7 +17,14 @@
 <p>Species: <%= @reptile.species %></p>
 <p>Number of Offspring: <%= @reptile.offspring %></p>
 
+<h3><%= @reptile.name %>'s Posts</h3>
+<% @reptile.posts.each do |post| %>
+  <strong><%= post.title %></strong></br>
+  <%= post.content %></br>
+<% end %>
+</br>
+
 <%= link_to 'Edit Reptile', edit_reptile_path %></br>
 <%= link_to 'See All Reptiles', user_reptiles_path(@reptile.user, @reptiles) %></br>
-<%= link_to 'Return to User Page', user_path %></br>
+<%= link_to 'Return to User Page', user_path(current_user) %></br>
 </div>
