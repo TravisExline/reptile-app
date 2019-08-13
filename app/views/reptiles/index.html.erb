@@ -27,8 +27,8 @@
   <div>Offspring: <%= reptile.offspring %></div>
   </br>
   <%= link_to 'Edit Reptile', edit_reptile_path(reptile) %></br>
-  <%= link_to 'View Reptile', reptile_path(reptile) %></br>
+  <%= link_to 'View Reptile', user_reptile_path(reptile.user, reptile) %></br>
   </br>
 <% end %>
-<%= link_to 'Return to User Page', user_path(:id) %></br>
+<%= link_to 'Return to User Page', user_path(current_user) %></br>
 </div>

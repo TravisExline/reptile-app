@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
-  belongs_to :user
-  has_many :reptiles, through: :users
+  belongs_to :reptile
   validates :title, presence: true
   validates :content, presence: true
 

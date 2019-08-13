@@ -18,6 +18,6 @@
 <p>Number of Offspring: <%= @reptile.offspring %></p>
 
 <%= link_to 'Edit Reptile', edit_reptile_path %></br>
-<%= link_to 'See All Reptiles', reptiles_path %></br>
+<%= link_to 'See All Reptiles', user_reptiles_path(@reptile.user, @reptiles) %></br>
 <%= link_to 'Return to User Page', user_path %></br>
 </div>
