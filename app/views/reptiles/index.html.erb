@@ -26,7 +26,7 @@
   <div>Species: <%= reptile.species %></div>
   <div>Offspring: <%= reptile.offspring %></div>
   </br>
-  <%= link_to 'Edit Reptile', edit_reptile_path(reptile) %></br>
+  <%= link_to 'Edit Reptile', edit_user_reptile_path(reptile.user, reptile) %></br>
   <%= link_to 'View Reptile', user_reptile_path(reptile.user, reptile) %></br>
   </br>
 <% end %>
